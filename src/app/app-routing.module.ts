@@ -59,6 +59,14 @@ const routes: Routes = [
     path: 'login-admin',
     loadChildren: () => import('./login-admin/login-admin.module').then( m => m.LoginAdminPageModule)
   },
+  {
+    path: 'successfull-book',
+    loadChildren: () => import('./successfull-book/successfull-book.module').then( m => m.SuccessfullBookPageModule)
+  },
+  {
+    path: 'boooking-history',
+    loadChildren: () => import('./boooking-history/boooking-history.module').then( m => m.BoookingHistoryPageModule)
+  },
 ];
 
 @NgModule({

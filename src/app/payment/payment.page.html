@@ -7,20 +7,23 @@
   
 
   <ion-row>
-    <ion-col style="color:#5F0661; text-align: center;font-weight: bold;font-family:'Arial Narrow Bold', sans-serif;font-size: 2em;" size="12">
+   <ion-col style="color:#5F0661; text-align: center;font-weight: bold;font-family:'Arial Narrow Bold', sans-serif;font-size: 2em;" size="12">
     Payment
-    </ion-col>
+   </ion-col>
   </ion-row>
 
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
       <ion-item>
-  <ion-label position="floating">Bank name</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-    </ion-col>
-  </ion-row>
-
+        <ion-label>Bank name</ion-label>
+         <ion-select placeholder="Select One">
+            <ion-select-option value="capitec">Capitec</ion-select-option>
+             <ion-select-option value="fnb">FNB</ion-select-option>
+             <ion-select-option value="fnb">standard bank</ion-select-option>
+              </ion-select>
+       </ion-item>
+</ion-col>
+</ion-row>
 
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
@@ -32,10 +35,31 @@
   </ion-row>
 
   <ion-row style="margin-top: 40px;;">
-    <ion-col   size="12">
+    <ion-col   size="6">
       <ion-item>
-  <ion-label position="floating">Exprire date </ion-label>
-  <ion-input></ion-input>
+  <ion-label >Exprire date</ion-label>
+  <ion-select>
+    <ion-select-option value="number">1</ion-select-option>
+    <ion-select-option value="number">2</ion-select-option>
+    <ion-select-option value="number">3</ion-select-option>
+    <ion-select-option value="number">4</ion-select-option>
+    <ion-select-option value="number">5</ion-select-option>
+    <ion-select-option value="number">6</ion-select-option>
+    <ion-select-option value="number">7</ion-select-option>
+    <ion-select-option value="number">8</ion-select-option>
+    <ion-select-option value="number">9</ion-select-option>
+    <ion-select-option value="number">10</ion-select-option>
+    <ion-select-option value="number">11</ion-select-option>
+    <ion-select-option value="number">12</ion-select-option>
+  </ion-select>
+ 
+  
+</ion-item>
+    </ion-col>
+    <ion-col   size="6">
+      <ion-item>
+  <ion-label position="floating">Exprire year </ion-label>
+  <ion-datetime [pickerOptions]="customPickerOptions"  displayFormat="YYYY" min="1981" max="2020"></ion-datetime> 
 </ion-item>
     </ion-col>
   </ion-row>
