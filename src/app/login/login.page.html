@@ -15,8 +15,8 @@
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
       <ion-item>
-  <ion-label position="floating">User name</ion-label>
-  <ion-input></ion-input>
+  <ion-label position="floating">Username</ion-label>
+  <ion-input  [(ngModel)]="username" name="Username" type="text"></ion-input>
 </ion-item>
     </ion-col>
   </ion-row>
@@ -26,14 +26,14 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label position="floating">Password </ion-label>
-  <ion-input></ion-input>
+  <ion-input [(ngModel)]="password" name="Password" type="text"></ion-input>
 </ion-item>
     </ion-col>
   </ion-row>
 
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
-      <ion-button expand="full" style="--background:#550a57">LOGIN</ion-button>
+      <ion-button (click)="login()" expand="full" style="--background:#550a57">LOGIN</ion-button>
     </ion-col>
   </ion-row>
 
