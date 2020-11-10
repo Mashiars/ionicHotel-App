@@ -1,0 +1,13 @@
+{
+  "appId": "com.hotel-app.ionic",
+  "appName": "Hotel-App",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

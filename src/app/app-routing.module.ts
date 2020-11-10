@@ -66,7 +66,23 @@ const routes: Routes = [
   {
     path: 'boooking-history',
     loadChildren: () => import('./boooking-history/boooking-history.module').then( m => m.BoookingHistoryPageModule)
+  },  {
+    path: 'hotel-ui',
+    loadChildren: () => import('./hotel-ui/hotel-ui.module').then( m => m.HotelUiPageModule)
   },
+  {
+    path: 'hotel-edit-profile',
+    loadChildren: () => import('./hotel-edit-profile/hotel-edit-profile.module').then( m => m.HotelEditProfilePageModule)
+  },
+  {
+    path: 'hotel-pictures',
+    loadChildren: () => import('./hotel-pictures/hotel-pictures.module').then( m => m.HotelPicturesPageModule)
+  },
+  {
+    path: 'hotel-profile',
+    loadChildren: () => import('./hotel-profile/hotel-profile.module').then( m => m.HotelProfilePageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,5 +1,7 @@
 {
   "name": "Hotel-App",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

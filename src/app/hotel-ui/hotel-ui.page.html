@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <span style="float:right" (click)="logOut()"  >logout</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <h1>Hotel Owner Screen</h1>
+      </ion-item>
+    </ion-col>
+  </ion-row> 
+<ion-grid>
+  <ion-row>
+    <ion-button expand="block" [routerLink]="'/hotel-edit-profile'"  style="--background:#5F0661;width:100%;" expand="full"   >Edit Profile</ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button expand="block" [routerLink]="'/hotel-pictures'"  style="--background:#5F0661;width:100%;" expand="full"  >Upload Images</ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button expand="block" [routerLink]="'/hotel-profile'"  style="--background:#5F0661;width:100%;" expand="full"   >View Hotel Profile</ion-button>
+  </ion-row>
+</ion-grid>
+</ion-content>

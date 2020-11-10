@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span [routerLink]="'/hotel-ui'">back</span>
+        </ion-col>
+        <ion-col >
+          <span style="float:right" (click)="logOut()"  >logout</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <h1>Upload Images</h1>
+      </ion-item>
+    </ion-col>
+  </ion-row> 
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-input type="file" accept="image/*" id="upload" (change)="fileChangeEvent($event)"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align: center;color: green;">
+    <span>{{this.feedback}}</span>  
+   </ion-row>
+  <ion-button expand="block" style="--background:#5F0661;" expand="full"  (click)=" addImages()" >Full Button</ion-button>
+</ion-grid>
+</ion-content>

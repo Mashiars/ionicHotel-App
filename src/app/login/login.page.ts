@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import { MyserviceService } from '../myservice.service';
 
 
 @Component({
@@ -9,14 +13,22 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPage implements OnInit {
  username: string;
  password: string;
-  constructor() { }
+ currentUser:any
+ UniqueId:any;
+  constructor(private service:MyserviceService) { }
 
   ngOnInit() {
   }
   login(){
     console.log(this.username)
     console.log(this.password)
+    this.service.loginUser(this.username,this.password);
+    console.log(this.service.getUserUID());
   }
 
+ 
+
+   
+    
 
 }

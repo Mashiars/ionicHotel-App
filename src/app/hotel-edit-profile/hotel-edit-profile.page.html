@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span [routerLink]="'/hotel-ui'">back</span>
+        </ion-col>
+        <ion-col >
+          <span style="float:right" (click)="logOut()"  >logout</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content  >
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <h1>Create Hotel Profile</h1>
+          </ion-item>
+        </ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input [(ngModel)]="name"  name="name"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">rating</ion-label>
+            <ion-input [(ngModel)]="rating"  name="rating"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+    
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">location</ion-label>
+            <ion-input [(ngModel)]="location"  name="location"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">types</ion-label>
+            <ion-input [(ngModel)]="types"  name="types"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">price</ion-label>
+            <ion-input [(ngModel)]="price"  name="price"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-col>
+          <ion-item>
+
+            <ion-input type="file" style="--opacity: 0.9;" accept="image/*" id="upload" (change)="fileChangeEvent($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row> -->
+        <ion-row style="text-align: center;color: green;">
+         <span>{{this.feedback}}</span>  
+        </ion-row>
+    </ion-grid>
+    <ion-button expand="block" style="--background:#5F0661;" expand="full"  (click)=" addhotelprofiles()" >Create</ion-button>
+ 
+</ion-content> -->
+
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span [routerLink]="'/hotel-ui'">back</span>
+        </ion-col>
+        <ion-col >
+          <span style="float:right" (click)="logOut()"  >logout</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content  >
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <h1>Create Hotel Profile</h1>
+          </ion-item>
+        </ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input [(ngModel)]="name"  name="name"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">rating</ion-label>
+            <ion-input [(ngModel)]="rating"  name="rating"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+    
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">location</ion-label>
+            <ion-input [(ngModel)]="location"  name="location"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">types</ion-label>
+            <ion-input [(ngModel)]="types"  name="types"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">price</ion-label>
+            <ion-input [(ngModel)]="price"  name="price"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+
+            <ion-input type="file" style="--opacity: 0.9;" accept="image/*" id="upload" (change)="fileChangeEvent($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        </ion-row>
+        <ion-row style="text-align: center;color: green;">
+         <span>{{this.feedback}}</span>  
+        </ion-row>
+    </ion-grid>
+    <ion-button expand="block" style="--background:#5F0661;" expand="full"  (click)="   addProfileHotel()" >Create</ion-button>
+ 
+</ion-content> -->
