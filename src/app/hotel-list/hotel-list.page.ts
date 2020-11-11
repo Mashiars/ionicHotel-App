@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  firebase from 'firebase';
 
 @Component({
   selector: 'app-hotel-list',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelListPage implements OnInit {
 
-  constructor() { }
+  displayprofile:any=[]
+
+  constructor() {
+
+   }
 
   ngOnInit() {
+    firebase.firestore().collection('hotels').onSnapshot(res =>{
+     res.forEach(element =>{
+       this.displayprofile.push(element.data());
+       console.log(this.displayprofile)
+     });
+
+     console.log('Display!!!!');
+
+    });
+
+
+    
   }
 
 }

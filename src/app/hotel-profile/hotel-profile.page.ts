@@ -11,16 +11,22 @@ import { MyserviceService } from '../myservice.service';
   styleUrls: ['./hotel-profile.page.scss'],
 })
 export class HotelProfilePage implements OnInit {
-  profileHotel:any=[]
+  profileHotel:any={}
   constructor(private service:MyserviceService) { }
 
   ngOnInit() {
-    firebase.firestore().collection('hotels').doc(this.service.getUserUID() ).collection('hotel').onSnapshot(res => {
-      res.forEach(element => {
-        this.profileHotel.push(element.data())
-      });
-      console.log('Successful!!!');
-    }); 
+
+
+    firebase.firestore().collection('hotels').where("owneruid","==",this.service.getUserUID()).get().then(snapshot=>{
+      snapshot.forEach((doc)=>{
+        this.profileHotel = (doc.data())
+      })
+      
+
+    }) 
+
+
+
   }
 
 

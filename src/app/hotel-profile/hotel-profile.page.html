@@ -19,14 +19,14 @@
     <ion-row>
       <h1>UserProfile view</h1>
     </ion-row>
-      <ion-row *ngFor="let x of profileHotel">
+      <ion-row >
           <ion-card >
-              <ion-img  style="width:100%;height: 100%;padding:0%" [src]="x.imgUrl"></ion-img>
+              <ion-img  style="width:100%;height: 100%;padding:0%" [src]="profileHotel.imgUrl"></ion-img>
           </ion-card>
           <ion-grid>
             <ion-row>
-              <ion-col><ion-label>Name: {{x.hotelname}}</ion-label></ion-col>
-              <ion-col><ion-label>Rating: <ion-icon style="color:gold;font-size:1em" name="star-outline"></ion-icon> {{x.rating}}</ion-label></ion-col>
+              <ion-col><ion-label>Name: {{profileHotel.hotelname}}</ion-label></ion-col>
+              <ion-col><ion-label>Rating: <ion-icon style="color:gold;font-size:1em" name="star-outline"></ion-icon> {{profileHotel.rating}}</ion-label></ion-col>
             </ion-row>
           </ion-grid>
       </ion-row>

@@ -11,18 +11,18 @@
     </ion-row>
   </ion-grid>
 
-    <ion-card>
-      <ion-card-header style=" background:#B44DA3">
-          <ion-img src="https://th.bing.com/th/id/OIP.uSd7KgHu1JoQjcUzLYQIkwHaEK?pid=Api&rs=1"></ion-img>
+    <ion-card   *ngFor="let hotels of displayprofile">
+      <ion-card-header style=" background:#B44DA3 ">
+          <ion-img [src]="hotels.imgUrl"></ion-img>
       </ion-card-header>
       <ion-card-content style=" background:#B44DA3">
         <ion-grid>
           <ion-row>
             <ion-col style="color: #5F0661;">
-             <div style="background-color: #e68de7 ;padding: 4%;">The Green Hotel</div> 
+             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}}</div> 
             </ion-col>
             <ion-col style="color:#5F0661 ;">
-             <div style="background-color:#e68de7 ; padding:4%"> Price</div>
+             <div style="background-color:#e68de7 ; padding:4%"> {{hotels.price}}</div>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -41,7 +41,7 @@
              <div style="background-color:#e68de7 ; padding:4%"> Kings Hotel</div>
             </ion-col>
             <ion-col style="color:#5F0661 ;">
-              <div style="background-color:#e68de7 ; padding:4% ">Price</div>
+              <div style="background-color:#e68de7 ; padding:4% "></div>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -55,4 +55,19 @@
       </ion-col>
     </ion-row>
     </a>
+    
+<div *ngFor="let hotels of displayprofile">
+  {{hotels.hotelname}}
+
+  {{hotels.imgUrl}}
+  {{hotels.location}}
+
+  {{hotels.price}}
+
+  {{hotels.rating}}
+
+  </div>
 </ion-content>
+
+
+
