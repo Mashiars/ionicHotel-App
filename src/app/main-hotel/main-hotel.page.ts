@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router} from  '@angular/router';   
+import  firebase from 'firebase';
+
 
 @Component({
   selector: 'app-main-hotel',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHotelPage implements OnInit {
 
-  constructor() { }
+  mainhotel:any=[]
+  uid =this.route.snapshot.params.uid;
+  
+  constructor( private route:ActivatedRoute ) {
+   console.log(this.uid)
+   }
 
-  ngOnInit() {
+  ngOnInit()  {
+    firebase.firestore().collection('hotels').where("owneruid",'==',this.uid).onSnapshot(res =>{
+     res.forEach(element =>{
+       this.mainhotel.push(element.data());
+       console.log(this.mainhotel)
+     });
+
+     console.log('Display!!!!');
+
+    });
+
+
+    
   }
+  
 
 }

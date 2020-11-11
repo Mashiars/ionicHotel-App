@@ -2,7 +2,7 @@
 <ion-content style=" --background:#B44DA3">
     
     
-    <a [routerLink]="'/main-hotel'"  >
+
   <ion-grid >
     <ion-row>
       <ion-col  size="12;">
@@ -12,6 +12,7 @@
   </ion-grid>
 
     <ion-card   *ngFor="let hotels of displayprofile">
+  <div [routerLink]="'/hotel-list/'+hotels.owneruid" >
       <ion-card-header style=" background:#B44DA3 ">
           <ion-img [src]="hotels.imgUrl"></ion-img>
       </ion-card-header>
@@ -19,7 +20,7 @@
         <ion-grid>
           <ion-row>
             <ion-col style="color: #5F0661;">
-             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}}</div> 
+             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}} {{hotels.owneruid}} </div> 
             </ion-col>
             <ion-col style="color:#5F0661 ;">
              <div style="background-color:#e68de7 ; padding:4%"> {{hotels.price}}</div>
@@ -27,46 +28,13 @@
           </ion-row>
         </ion-grid>
       </ion-card-content>
+    </div>
     </ion-card>
 
 
-    <ion-card>
-      <ion-card-header style=" background:#B44DA3">
-          <ion-img src="https://i.dailymail.co.uk/i/pix/2017/12/05/09/4700561D00000578-5146823-image-a-47_1512466988155.jpg"></ion-img>
-      </ion-card-header>
-      <ion-card-content style=" background:#B44DA3">
-        <ion-grid>
-          <ion-row>
-            <ion-col style="color: #5F0661;">
-             <div style="background-color:#e68de7 ; padding:4%"> Kings Hotel</div>
-            </ion-col>
-            <ion-col style="color:#5F0661 ;">
-              <div style="background-color:#e68de7 ; padding:4% "></div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
 
-
-    <ion-row style="margin-top: 40px;;">
-      <ion-col   size="12">
-        <ion-button expand="full"  style="--background:#9d0fa1"> SEE MORE </ion-button>
-      </ion-col>
-    </ion-row>
-    </a>
     
-<div *ngFor="let hotels of displayprofile">
-  {{hotels.hotelname}}
 
-  {{hotels.imgUrl}}
-  {{hotels.location}}
-
-  {{hotels.price}}
-
-  {{hotels.rating}}
-
-  </div>
 </ion-content>
 
 

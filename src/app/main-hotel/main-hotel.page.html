@@ -1,7 +1,7 @@
 
 <ion-content style=" --background:#B44DA3"  >
   
-    <a [routerLink]="'/create-account'" >Next</a>
+
   <ion-grid >
     <ion-row>
       <ion-col  size="12;">
@@ -10,17 +10,17 @@
     </ion-row>
 
       <ion-row>
-    <ion-card>
+    <ion-card   *ngFor="let hotels of mainhotel">
       <ion-card-header style=" background:#B44DA3">
-          <ion-img src="https://i.dailymail.co.uk/i/pix/2017/12/05/09/4700561D00000578-5146823-image-a-47_1512466988155.jpg"></ion-img>
+          <ion-img [src]="hotels.imgUrl"></ion-img>
       </ion-card-header>
       <ion-card-content style=" background:#B44DA3">
             <ion-col style="color: #5F0661;">
              
-             <div style="background-color:#e68de7 ;padding: 4%;">Honey</div> 
+             <div style="background-color:#e68de7 ;padding: 4%;">  {{hotels.hotelname}}</div> 
             </ion-col>
             
-             <div style="background-color:#e68de7; padding: 4% ;color: #5F0661;">Price</div>
+             <div style="background-color:#e68de7; padding: 4% ;color: #5F0661;"> {{hotels.price}}</div>
              <ion-col >
             </ion-col>
         
@@ -35,7 +35,7 @@
   </ion-row>
 
   <ion-row style="color:rgb(92, 10, 92);">
-    <ion-input value="Luxury Room"></ion-input>
+    <ion-input value="Luxury Room">types</ion-input>
   </ion-row>
 
   <ion-row style="color:rgb(92, 10, 92);">
@@ -61,12 +61,17 @@
   <ion-input value="Parking"></ion-input>
 </ion-row>
 
-<ion-row style="margin-top: 40px;;">
-  <ion-col   size="12">
-    <ion-button expand="full"  style="--background:#9d0fa1"> Book Now </ion-button>
-  </ion-col>
-</ion-row>
 
+<div *ngFor="let hotels of mainhotel">
+  {{hotels.hotelname}}
+
+  {{hotels.imgUrl}}
+  {{hotels.location}}
+
+  {{hotels.price}}
+   {{hotels.types}} 
+  {{hotels.rating}}
+</div>
   
 
   </ion-grid>

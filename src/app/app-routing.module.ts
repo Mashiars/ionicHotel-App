@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
   },
   {
+    path: 'hotel-list/:uid',
+    loadChildren: () => import('./main-hotel/main-hotel.module').then( m => m.MainHotelPageModule)
+  },
+  {
     path: 'hotel-list',
     loadChildren: () => import('./hotel-list/hotel-list.module').then( m => m.HotelListPageModule)
   },
@@ -66,7 +70,8 @@ const routes: Routes = [
   {
     path: 'boooking-history',
     loadChildren: () => import('./boooking-history/boooking-history.module').then( m => m.BoookingHistoryPageModule)
-  },  {
+  },
+  {
     path: 'hotel-ui',
     loadChildren: () => import('./hotel-ui/hotel-ui.module').then( m => m.HotelUiPageModule)
   },
