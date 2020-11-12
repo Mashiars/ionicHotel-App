@@ -58,6 +58,28 @@ export class MyserviceService {
 
       }
 
+      addbookings(useruid,check_in,check_out,roomtype,adults,kids,owneruid){
+        var db =firebase.firestore();
+        var hotelsRef = db.collection("hotels");
+        var hotel = Promise.all([
+          hotelsRef.doc(owneruid).collection("bookings").add({
+              useruid:useruid,
+              check_in: check_in,
+              check_out:check_out,
+              roomtype: roomtype,
+              adults: adults,
+              kids: kids,
+              owneruid:owneruid,
+              
+          })
+      ]);
+
+      }
+
+
+
+
+
       //Images(gallary)
       addImages(uid,owneruid,imgUrl){
         var db =firebase.firestore();

@@ -2,8 +2,7 @@
 <ion-content style=" --background:#B44DA3"  >
   <ion-grid style="margin-top: 150px;">
 
-
-
+     
   
 
   <ion-row>
@@ -17,7 +16,9 @@
     <ion-item>
       <ion-label>Check-in</ion-label>
     <ion-label>MM DD YY</ion-label>
-    <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+
+    <ion-input [(ngModel)]="check_in"  name="check-in" type="date"></ion-input>
+
 </ion-item>
     </ion-col>
   </ion-row>
@@ -28,7 +29,8 @@
   <ion-item>
     <ion-label>Check-out</ion-label>
     <ion-label>MM DD YY</ion-label>
-    <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+    <ion-input [(ngModel)]="check_out"  name="check-out" type="date"></ion-input>
+
 </ion-item>
     </ion-col>
   </ion-row>
@@ -39,7 +41,7 @@
     <ion-col   size="12">
       <ion-item>
         <ion-label>Room Type</ion-label>
-  <ion-select placeholder="Select One">
+  <ion-select placeholder="Select One"  [(ngModel)]="roomtype"  name="roomtype"  >
     <ion-select-option value="l">Luxury Room</ion-select-option>
     <ion-select-option value="f">Family Room</ion-select-option>
   </ion-select>
@@ -52,19 +54,20 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label >adults </ion-label>
-  <ion-select>
-    <ion-select-option value="number">1</ion-select-option>
-    <ion-select-option value="number">2</ion-select-option>
-    <ion-select-option value="number">3</ion-select-option>
-    <ion-select-option value="number">4</ion-select-option>
-    <ion-select-option value="number">5</ion-select-option>
-    <ion-select-option value="number">6</ion-select-option>
-    <ion-select-option value="number">7</ion-select-option>
-    <ion-select-option value="number">8</ion-select-option>
-    <ion-select-option value="number">9</ion-select-option>
-    <ion-select-option value="number">10</ion-select-option>
-    <ion-select-option value="number">11</ion-select-option>
-    <ion-select-option value="number">12</ion-select-option>
+
+  <ion-select placeholder="Select One"  [(ngModel)]="adults"  name="adults"  >
+    <ion-select-option value="1">1</ion-select-option>
+    <ion-select-option value="2">2</ion-select-option>
+    <ion-select-option value="3">3</ion-select-option>
+    <ion-select-option value="4">4</ion-select-option>
+    <ion-select-option value="5">5</ion-select-option>
+    <ion-select-option value="6">6</ion-select-option>
+    <ion-select-option value="7">7</ion-select-option>
+    <ion-select-option value="8">8</ion-select-option>
+    <ion-select-option value="9">9</ion-select-option>
+    <ion-select-option value="10">10</ion-select-option>
+    <ion-select-option value="11">11</ion-select-option>
+    <ion-select-option value="12">12</ion-select-option>
   </ion-select>
   
   <ion-input></ion-input>
@@ -77,19 +80,19 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label >Kids </ion-label>
-  <ion-select>
-    <ion-select-option value="number">1</ion-select-option>
-    <ion-select-option value="number">2</ion-select-option>
-    <ion-select-option value="number">3</ion-select-option>
-    <ion-select-option value="number">4</ion-select-option>
-    <ion-select-option value="number">5</ion-select-option>
-    <ion-select-option value="number">6</ion-select-option>
-    <ion-select-option value="number">7</ion-select-option>
-    <ion-select-option value="number">8</ion-select-option>
-    <ion-select-option value="number">9</ion-select-option>
-    <ion-select-option value="number">10</ion-select-option>
-    <ion-select-option value="number">11</ion-select-option>
-    <ion-select-option value="number">12</ion-select-option>
+  <ion-select placeholder="Select One"  [(ngModel)]="kids"  name="kids"  >
+    <ion-select-option value="1">1</ion-select-option>
+    <ion-select-option value="2">2</ion-select-option>
+    <ion-select-option value="3">3</ion-select-option>
+    <ion-select-option value="4">4</ion-select-option>
+    <ion-select-option value="5">5</ion-select-option>
+    <ion-select-option value="6">6</ion-select-option>
+    <ion-select-option value="7">7</ion-select-option>
+    <ion-select-option value="8">8</ion-select-option>
+    <ion-select-option value="9">9</ion-select-option>
+    <ion-select-option value="10">10</ion-select-option>
+    <ion-select-option value="11">11</ion-select-option>
+    <ion-select-option value="12">12</ion-select-option>
   </ion-select>
   
   <ion-input></ion-input>
@@ -99,18 +102,13 @@
 
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
-      <ion-button expand="full" style="--background:#550a57">BOOK NOW</ion-button>
+      <ion-button expand="full" style="--background:#550a57" (click)="addbookings()" >BOOK NOW</ion-button>
     </ion-col>
   </ion-row>
 
 
-
-
   
-  <ion-item>
-   
-  </ion-item>
-  
+
 
   </ion-grid>
   
