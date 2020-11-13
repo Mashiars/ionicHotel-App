@@ -1,8 +1,18 @@
 
-<ion-content style=" --background:#B44DA3"  >
-  <ion-grid style="margin-top: 150px;">
+<ion-content style=" --background:#fff"  >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <span [routerLink]="'/user-ui'">back</span>
+      </ion-col>
+      <ion-col >
+        <span style="float:right" (click)="logOut()"  >logout</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  <ion-grid style="margin-top: 10px;">
 
-     
+
   
 
   <ion-row>
@@ -101,16 +111,11 @@
   </ion-row>
 
   <ion-row style="margin-top: 40px;;">
-    <ion-col   size="12">
-      <ion-button expand="full" style="--background:#550a57" (click)="addbookings()" >BOOK NOW</ion-button>
+    <ion-col style="color:green"  size="12">
+      {{this.feedback }}
     </ion-col>
   </ion-row>
-
-
-  
-
-
+  <ion-button expand="full" style="--background:#5F0661" (click)="addbookings()" >BOOK NOW</ion-button>
   </ion-grid>
-  
 </ion-content>
 

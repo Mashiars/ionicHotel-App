@@ -15,7 +15,7 @@ export class MyserviceService {
   constructor(private router:Router) { }
 
   // login
-  async loginUser(email,password){
+  async loginOwner (email,password){
 
     firebase.auth().signInWithEmailAndPassword(email,password).then(
       results=>{
@@ -26,9 +26,19 @@ export class MyserviceService {
         this.router.navigateByUrl('hotel-ui');
       })
 
+      }
+  // login
+  async loginUser(email,password){
+    firebase.auth().signInWithEmailAndPassword(email,password).then(
+      results=>{
+    this.currentUser   = firebase.auth().currentUser;
+  var user_uid = this.currentUser.uid
+        this.userUID(user_uid)
+       // console.log(user_uid);
+        this.router.navigateByUrl('user-ui');
+      })
 
       }
-
       
       userUID(uid){
         this.UniqueId = uid;

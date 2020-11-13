@@ -1,42 +1,38 @@
 
-<ion-content style=" --background:#B44DA3"  >
-  <a href="login"></a>
-  <ion-grid >
+<ion-content style=" --background:#fff"  >
+  
+  <ion-grid *ngFor="let x of list">
     
       
-  <ion-row style="color:white;">
+  <ion-row style="">
     <ion-col  size="12">
-    <ion-input value="Booking History"></ion-input>
+    chec-in  {{x.check_in}}
+    </ion-col>
+  </ion-row>
+  <ion-row style="">
+    <ion-col  size="12">
+    chec-out  {{x.check_out}}
     </ion-col>
   </ion-row>
 
-  <ion-row style="color:rgb(92, 10, 92);">
-    <ion-input value="Hotel name"></ion-input>
+  <ion-row style="">
+    <ion-col  size="12">
+      roomtype  {{x.roomtype}}
+    </ion-col>
   </ion-row>
 
-  <ion-row style="color:rgb(92, 10, 92);">
-    <ion-input value="Date $ Time"></ion-input>
+
+  <ion-row style="">
+    <ion-col  size="12">
+      adults  {{x.adults}}
+    </ion-col>
   </ion-row>
 
-
-
-
-
-
-<ion-row style="color:white;">
-  <ion-col  size="12">
-  <ion-input value=""></ion-input>
-  </ion-col>
-</ion-row>
-
-<ion-row style="color:rgb(92, 10, 92);">
-  <ion-input value="Food $ Drinks"></ion-input>
-</ion-row>
-
-<ion-row style="color:rgb(92, 10, 92);">
-  <ion-input value="Parking"></ion-input>
-</ion-row>
-
+  <ion-row style="">
+    <ion-col  size="12">
+      kids  {{x.kids}}
+    </ion-col>
+  </ion-row>
 
 
   

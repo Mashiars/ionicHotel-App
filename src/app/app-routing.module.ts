@@ -40,6 +40,16 @@ const routes: Routes = [
     loadChildren: () => import('./booking-form/booking-form.module').then( m => m.BookingFormPageModule)
   },
   {
+    path: 'booking-form/:uid',
+    loadChildren: () => import('./booking-form/booking-form.module').then( m => m.BookingFormPageModule)
+  }
+  
+  
+  
+  
+  
+  ,
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -68,7 +78,7 @@ const routes: Routes = [
     loadChildren: () => import('./successfull-book/successfull-book.module').then( m => m.SuccessfullBookPageModule)
   },
   {
-    path: 'boooking-history',
+    path: 'booking-history',
     loadChildren: () => import('./boooking-history/boooking-history.module').then( m => m.BoookingHistoryPageModule)
   },
   {
@@ -87,9 +97,18 @@ const routes: Routes = [
     path: 'hotel-profile',
     loadChildren: () => import('./hotel-profile/hotel-profile.module').then( m => m.HotelProfilePageModule)
   },
+  {
+    path: 'user-ui',
+    loadChildren: () => import('./user-ui/user-ui.module').then( m => m.UserUiPageModule)
+  },
+  {
+    path: 'profile/:uid',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+
 
 ];
-
+//booking-form/:uid
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

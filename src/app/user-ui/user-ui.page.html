@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" >
+          <span style="float:right;color:#B44DA3"  [routerLink]="'/booking-history/'"  >history</span>
+        </ion-col>
+        <ion-col size="5">
+          <span style="float:right;color:#B44DA3"   >profile</span>
+        </ion-col>
+        <ion-col size="5">
+          <span style="float:right;color:#B44DA3"   >logout</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content style=" --background:#B44DA3">
+    
+    
+
+  <ion-grid >
+    <ion-row>
+      <ion-col  size="12;">
+      <h1 style= "color:white;">HOTELS</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <ion-card   *ngFor="let hotels of displayprofile">
+  <div [routerLink]="'/profile/'+hotels.owneruid" >
+      <ion-card-header style=" background:#B44DA3 ">
+          <ion-img [src]="hotels.imgUrl"></ion-img>
+      </ion-card-header>
+      <ion-card-content style=" background:#B44DA3">
+        <ion-grid>
+          <ion-row>
+            <ion-col style="color: #5F0661;">
+             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}} {{hotels.owneruid}} </div> 
+            </ion-col>
+            <ion-col style="color:#5F0661 ;">
+             <div style="background-color:#e68de7 ; padding:4%"> {{hotels.price}}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </div>
+    </ion-card>
+
+
+
+    
+
+</ion-content>
+
+
+
+

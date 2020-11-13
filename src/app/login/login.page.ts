@@ -15,18 +15,30 @@ export class LoginPage implements OnInit {
  password: string;
  currentUser:any
  UniqueId:any;
+ users:any;
   constructor(private service:MyserviceService) { }
 
   ngOnInit() {
   }
+
   login(){
+   if(this.users=="1"){
+
     console.log(this.username)
     console.log(this.password)
     this.service.loginUser(this.username,this.password);
     console.log(this.service.getUserUID());
+  }else if(this.users=="2"){
+    console.log(this.username)
+    console.log(this.password)
+    this.service.loginOwner(this.username,this.password);
+    console.log(this.service.getUserUID());
+
+
   }
 
- 
+  }
+
 
    
     
