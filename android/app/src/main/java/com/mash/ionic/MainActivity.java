@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.mash.ionic;
 
 import android.os.Bundle;
 

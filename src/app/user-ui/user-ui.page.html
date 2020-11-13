@@ -6,7 +6,7 @@
           <span style="float:right;color:#B44DA3"  [routerLink]="'/booking-history/'"  >history</span>
         </ion-col>
         <ion-col size="5">
-          <span style="float:right;color:#B44DA3"   >profile</span>
+          <span style="float:right;color:#B44DA3" [routerLink]="'/hotel-profile/'" >profile</span>
         </ion-col>
         <ion-col size="5">
           <span style="float:right;color:#B44DA3" (click)="logOut()"  >logout</span>
@@ -36,7 +36,7 @@
         <ion-grid>
           <ion-row>
             <ion-col style="color: #5F0661;">
-             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}} {{hotels.owneruid}} </div> 
+             <div style="background-color: #e68de7 ;padding: 4%;">  {{hotels.hotelname}}</div> 
             </ion-col>
             <ion-col style="color:#5F0661 ;">
              <div style="background-color:#e68de7 ; padding:4%"> {{hotels.price}}</div>
