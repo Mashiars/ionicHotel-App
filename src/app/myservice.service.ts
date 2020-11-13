@@ -110,5 +110,14 @@ export class MyserviceService {
           console.log(error.message);
         });
       }
+      async logOut(){
+        firebase.auth().signOut().then(results=>{
+          console.log(results);
+          this.router.navigateByUrl('hotel-list');
+        }).catch((error)=>{
+          console.log(error.message);
+        });
+      }
 
 }
+

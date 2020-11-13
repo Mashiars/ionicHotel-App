@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  firebase from 'firebase';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-user-ui',
@@ -11,8 +12,10 @@ export class UserUiPage implements OnInit {
 
   displayprofile:any=[]
 
-  constructor() {
+  constructor(private  service:MyserviceService) {}
 
+  logOut(){
+    this.service.logOut();
    }
 
   ngOnInit() {
@@ -26,9 +29,9 @@ export class UserUiPage implements OnInit {
 
     });
 
-
     
   }
 
+ 
 
 }
