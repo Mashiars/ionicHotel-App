@@ -1,5 +1,6 @@
 
 <ion-content style=" --background:#B44DA3"  >
+  <form #f="ngForm" novalidate >
   <ion-grid style="margin-top: 150px;">
 
 
@@ -16,8 +17,13 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label position="floating">Username</ion-label>
-  <ion-input  [(ngModel)]="username" name="Username" type="text"></ion-input>
+  <ion-input type="text" name="username" required [(ngModel)]="data.username" #usernameCtrl="ngModel"  ></ion-input>
 </ion-item>
+
+<ion-item *ngIf="!usernameCtrl.valid && usernameCtrl.touched">
+  <ion-text color="danger">username is required</ion-text>
+</ion-item>
+
     </ion-col>
   </ion-row>
 
@@ -26,23 +32,30 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label position="floating">Password </ion-label>
-  <ion-input [(ngModel)]="password" name="Password" type="password"></ion-input>
+  <ion-input type="password" name="Password"  required [(ngModel)]="data.password" #passwordCtrl="ngModel"   ></ion-input>
 </ion-item>
+
+<ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+  <ion-text color="danger">password is required</ion-text>
+</ion-item>
+
     </ion-col>
   </ion-row>
+  
   <ion-row>
-    
-    
-      <ion-select style="background-color: aliceblue;" [(ngModel)]="users" placeholder="Users">
+ <ion-select style="background-color: aliceblue;" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="Users">
         <ion-select-option value="1">user</ion-select-option>
         <ion-select-option value="2">owner</ion-select-option>
       </ion-select>
     
+<ion-item *ngIf="!usersCtrl.valid && usersCtrl.touched">
+  <ion-text color="danger">usersCtrl is required</ion-text>
+</ion-item>
   </ion-row>
 <br>
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
-      <ion-button (click)="login()" expand="full" style="--background:#550a57">LOGIN</ion-button>
+      <ion-button (click)="login()" expand="full" style="--background:#550a57" [disabled]="!f.valid">LOGIN</ion-button>
       <a routerLink="/create-account" style="color:white;font-size:1em;">Dont Have An Account? Create An Account.</a>
     </ion-col>
   </ion-row>
@@ -50,5 +63,6 @@
   
 
   </ion-grid>
+  </form>
 </ion-content>
 

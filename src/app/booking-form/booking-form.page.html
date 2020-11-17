@@ -26,10 +26,12 @@
     <ion-item>
       <ion-label>Check-in</ion-label>
     <ion-label>MM DD YY</ion-label>
-
-    <ion-input [(ngModel)]="check_in"  name="check-in" type="date"></ion-input>
-
-</ion-item>
+    <ion-input type="date"  name="check-in" required="" [(ngModel)]="data.check_in" #check-inCtrl="ngModel"  ></ion-input>
+    </ion-item>
+   
+    <ion-item *ngIf="!check-inCtrl.valid && check-inCtrl.touched">
+      <ion-text color="danger">check-in is required</ion-text>
+    </ion-item>
     </ion-col>
   </ion-row>
 
@@ -39,9 +41,16 @@
   <ion-item>
     <ion-label>Check-out</ion-label>
     <ion-label>MM DD YY</ion-label>
-    <ion-input [(ngModel)]="check_out"  name="check-out" type="date"></ion-input>
+    <ion-input  type="date"  name="check-out" required="" [(ngModel)]="data.check_out" #check-outCtrl="ngModel"></ion-input>
+  </ion-item>
 
-</ion-item>
+  <ion-item *ngIf="!check-outCtrl.valid && check-outCtrl.touched">
+    <ion-text color="danger">check-out is required</ion-text>
+  </ion-item>
+  </ion-col>
+</ion-row>
+  
+
     </ion-col>
   </ion-row>
 
@@ -51,12 +60,17 @@
     <ion-col   size="12">
       <ion-item>
         <ion-label>Room Type</ion-label>
-  <ion-select placeholder="Select One"  [(ngModel)]="roomtype"  name="roomtype"  >
+        
+  <ion-select placeholder="Select One"  [(ngModel)]="data.roomtype" name="roomtype" #roomtypeCtrl="ngModel" placeholder="roomtype"> 
     <ion-select-option value="l">Luxury Room</ion-select-option>
     <ion-select-option value="f">Family Room</ion-select-option>
   </ion-select>
-  <ion-input></ion-input>
-</ion-item>
+
+    <ion-item *ngIf="!roomtypeCtrl.valid && roomtypeCtrl.touched">
+      <ion-text color="danger">usersCtrl is required</ion-text>
+    </ion-item>
+  </ion-item>
+
     </ion-col>
   </ion-row>
 
@@ -65,7 +79,8 @@
       <ion-item>
   <ion-label >adults </ion-label>
 
-  <ion-select placeholder="Select One"  [(ngModel)]="adults"  name="adults"  >
+  <ion-select placeholder="Select One"  [(ngModel)]="adults"  name="adults" #adultsCtrl="ngModel" placeholder="adults" >
+    <ion-select-option value="1">0</ion-select-option>
     <ion-select-option value="1">1</ion-select-option>
     <ion-select-option value="2">2</ion-select-option>
     <ion-select-option value="3">3</ion-select-option>
@@ -79,6 +94,11 @@
     <ion-select-option value="11">11</ion-select-option>
     <ion-select-option value="12">12</ion-select-option>
   </ion-select>
+
+  <ion-item *ngIf="!adultsCtrl.valid && adultsCtrl.touched">
+    <ion-text color="danger"> adults is required</ion-text>
+  </ion-item>
+</ion-item>
   
   <ion-input></ion-input>
 </ion-item>
@@ -90,7 +110,8 @@
     <ion-col   size="12">
       <ion-item>
   <ion-label >Kids </ion-label>
-  <ion-select placeholder="Select One"  [(ngModel)]="kids"  name="kids"  >
+  <ion-select placeholder="Select One"   [(ngModel)]="kids"  name="adults" #kidsCtrl="ngModel" placeholder="kids">
+    <ion-select-option value="1">0</ion-select-option>
     <ion-select-option value="1">1</ion-select-option>
     <ion-select-option value="2">2</ion-select-option>
     <ion-select-option value="3">3</ion-select-option>
@@ -104,6 +125,10 @@
     <ion-select-option value="11">11</ion-select-option>
     <ion-select-option value="12">12</ion-select-option>
   </ion-select>
+
+  <ion-item *ngIf="!kidsCtrl.valid && kidsCtrl.touched">
+    <ion-text color="danger"> kids is required</ion-text>
+  </ion-item>
   
   <ion-input></ion-input>
 </ion-item>
@@ -115,7 +140,7 @@
       {{this.feedback }}
     </ion-col>
   </ion-row>
-  <ion-button expand="full" style="--background:#5F0661" (click)="addbookings()" >BOOK NOW</ion-button>
+  <ion-button expand="full" style="--background:#5F0661" (click)="addbookings()" >Submit</ion-button>
   </ion-grid>
 </ion-content>
 

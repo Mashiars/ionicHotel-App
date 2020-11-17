@@ -11,27 +11,34 @@ import { MyserviceService } from '../myservice.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
- username: string;
- password: string;
+  data: any;
+//  username: string;
+//  password: string;
  currentUser:any
  UniqueId:any;
  users:any;
-  constructor(private service:MyserviceService) { }
+  constructor(private service:MyserviceService) { 
+    this.data={
+      username:'',
+      password:'',
+      users:''
+    }
+  }
 
   ngOnInit() {
   }
 
   login(){
-   if(this.users=="1"){
+   if(this.data.users=="1"){
 
-    console.log(this.username)
-    console.log(this.password)
-    this.service.loginUser(this.username,this.password);
+    console.log(this.data.username)
+    console.log(this.data.password)
+    this.service.loginUser(this.data.username,this.data.password);
     console.log(this.service.getUserUID());
-  }else if(this.users=="2"){
-    console.log(this.username)
-    console.log(this.password)
-    this.service.loginOwner(this.username,this.password);
+  }else if(this.data.users=="2"){
+    console.log(this.data.username)
+    console.log(this.data.password)
+    this.service.loginOwner(this.data.username,this.data.password);
     console.log(this.service.getUserUID());
 
 

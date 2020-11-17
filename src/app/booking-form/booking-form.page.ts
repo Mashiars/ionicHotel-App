@@ -8,7 +8,7 @@ import { MyserviceService } from '../myservice.service';
 })
 export class BookingFormPage implements OnInit {
 
-
+   data: any;
   check_in:any;
   check_out:any;
   roomtype:any;
@@ -17,14 +17,26 @@ export class BookingFormPage implements OnInit {
   uid =this.route.snapshot.params.uid;
   collection:any;
   feedback:any;
-  constructor(private service:MyserviceService,private route:ActivatedRoute) {  this.collection = 'hotel'; }
+  constructor(private service:MyserviceService,private route:ActivatedRoute) {  this.collection = 'hotel';
+
+  this.data={
+    check_in: '',
+    check_out: '',
+    roomtype:  '',
+    adults:  '',
+    kids: ''
+
+
+  }
+  
+  }
 
   ngOnInit() {
   }
 
   addbookings(){
 
-    this.service. addbookings(this.service.getUserUID(),this.check_in,this.check_out,this.roomtype,this.adults,this.kids,this.uid)
+    this.service. addbookings(this.service.getUserUID(),this.data.check_in,this.data.check_out,this.data.roomtype,this.data.adults,this.data.kids,this.data.uid)
     this.feedback = "Successfully Booked!!!";
 
   }
