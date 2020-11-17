@@ -51,7 +51,7 @@ export class MyserviceService {
        }   
     //hotel owner
 
-       addProfileHotel(uid,name,rating,location,types,price,owneruid,collection,imgUrl){
+       addProfileHotel(uid,name,rating,location,types,price,owneruid,collection,imgUrl,facilities){
         var db =firebase.firestore();
         var hotelsRef = db.collection("hotels");
         var hotel = Promise.all([
@@ -62,7 +62,8 @@ export class MyserviceService {
               types: types,
               price: price,
               owneruid:owneruid,
-              imgUrl:imgUrl
+              imgUrl:imgUrl,
+              facilities:facilities
           })
       ]);
 

@@ -43,13 +43,13 @@
   </ion-row>
   
   <ion-row>
- <ion-select style="background-color: aliceblue;width:100%" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="Users">
+ <ion-select style="background-color: rgb(209, 112, 193);width:100%" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="User/owner">
         <ion-select-option value="1">user</ion-select-option>
         <ion-select-option value="2">owner</ion-select-option>
       </ion-select>
     
 <ion-item *ngIf="!usersCtrl.valid && usersCtrl.touched">
-  <ion-text color="danger">usersCtrl is required</ion-text>
+  <ion-text color="danger">usersC is required</ion-text>
 </ion-item>
   </ion-row>
   <br>

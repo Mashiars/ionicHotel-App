@@ -17,7 +17,9 @@
 </ion-header>
 
 <ion-content>
+ 
   <ion-content  >
+    <form #f="ngForm" novalidate >
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -29,17 +31,43 @@
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label position="floating">Name</ion-label>
-            <ion-input [(ngModel)]="name"  name="name"  type="text"></ion-input>
+            <ion-label position="floating"> name</ion-label>
+            <ion-input type="name" name="name"  required [(ngModel)]="data.name" #nameCtrl="ngModel"   ></ion-input>
           </ion-item>
+          <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched">
+            <ion-text color="danger">name is required</ion-text>
+          </ion-item>
+      
+
         </ion-col>
       </ion-row>
         <ion-row>
         <ion-col>
           <ion-item>
             <ion-label position="floating">rating</ion-label>
-            <ion-input [(ngModel)]="rating"  name="rating"  type="text"></ion-input>
+            <ion-input type="rating" name="rating"  required [(ngModel)]="rating" #ratingCtrl="ngModel"   ></ion-input>
           </ion-item>
+          <ion-item *ngIf="!ratingCtrl.valid && ratingCtrl.touched">
+            <ion-text color="danger"> rating is required</ion-text>
+          </ion-item>
+
+  
+
+        </ion-col>
+    
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">facilities</ion-label>
+            <ion-input type="text" name="facilities"  required [(ngModel)]="data.facilities" #facilitiesCtrl="ngModel"   ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!facilitiesCtrl.valid && facilitiesCtrl.touched">
+            <ion-text color="danger"> facilities is required</ion-text>
+          </ion-item>
+
+  
+
         </ion-col>
     
       </ion-row>
@@ -47,24 +75,44 @@
         <ion-col>
           <ion-item>
             <ion-label position="floating">location</ion-label>
-            <ion-input [(ngModel)]="location"  name="location"  type="text"></ion-input>
+            <ion-input type="location" name="location"  required [(ngModel)]="location" #locationCtrl="ngModel"   ></ion-input>
           </ion-item>
+          <ion-item *ngIf="!locationCtrl.valid && locationCtrl.touched">
+            <ion-text color="danger"> location is required</ion-text>
+          </ion-item>
+
+     
+
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label position="floating">types</ion-label>
-            <ion-input [(ngModel)]="types"  name="types"  type="text"></ion-input>
+            <ion-label position="floating">Contacts</ion-label>
+            <ion-input [(ngModel)]="data.contacts"  name="contacts" #contactsCtrl="ngModel"   type="text"></ion-input>
           </ion-item>
+          <ion-item *ngIf="!contactsCtrl.valid && contactsCtrl.touched">
+            <ion-text color="danger"> contacts is required</ion-text>
+          </ion-item>
+           
+
+  
+
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <ion-item>
             <ion-label position="floating">price</ion-label>
-            <ion-input [(ngModel)]="price"  name="price"  type="text"></ion-input>
+            <ion-input type="price" name="price"  required [(ngModel)]="data.price" #priceCtrl="ngModel"   ></ion-input>
           </ion-item>
+          <ion-item *ngIf="!priceCtrl.valid && priceCtrl.touched">
+            <ion-text color="danger"> price is required</ion-text>
+          </ion-item>
+
+ 
+
         </ion-col>
       </ion-row>
       <ion-row>
@@ -79,6 +127,6 @@
          <span>{{this.feedback}}</span>  
         </ion-row>
     </ion-grid>
-    <ion-button expand="block" style="--background:#5F0661;" expand="full"  (click)="   addProfileHotel()" >Create</ion-button>
- 
+    <ion-button expand="block" style="--background:#5F0661;" [disabled]="!f.valid" expand="full"  (click)="   addProfileHotel()">Create</ion-button>
+ </form>
 </ion-content> 

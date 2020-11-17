@@ -10,24 +10,35 @@ export class HotelEditProfilePage implements OnInit {
  
 
   /*Make Hotel Profile (Form)*/
-   rating:any;
-   location:any;
-   price:any;
-   name:any;
-   types:any;
+  data:any;
    imgUrl:any;
  /*End here */
   collection:any;
   feedback:any;
    constructor(private service:MyserviceService) { 
      this.collection = 'hotel';
+     this.data ={
+       rating:'',
+       location:'',
+       price:'',
+       name:'',
+       contacts:'',
+       facilities:''
+
+     }
+
+
+
+
+
+
    }
 
    ngOnInit() {
    }
    addProfileHotel(){
           
-    this.service.addProfileHotel(this.service.getUserUID(),this.name,this.rating,this.location,this.types,this.price,this.service.getUserUID() ,this.collection,this.imgUrl);
+    this.service.addProfileHotel(this.service.getUserUID(),this.data.name,this.data.rating,this.data.location,this.data.contacts,this.data.price,this.service.getUserUID() ,this.collection,this.imgUrl,this.data.facilities);
     this.feedback = "Profile Added Successfully!";
    }
 
