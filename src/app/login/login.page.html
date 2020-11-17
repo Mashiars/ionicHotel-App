@@ -1,5 +1,5 @@
 
-<ion-content style=" --background:#B44DA3"  >
+<ion-content style=" --background:#fff"  >
   <form #f="ngForm" novalidate >
   <ion-grid style="margin-top: 150px;">
 
@@ -31,7 +31,7 @@
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
       <ion-item>
-  <ion-label position="floating">Password </ion-label>
+  <ion-label position="floating" style="color:#5F0661">Password </ion-label>
   <ion-input type="password" name="Password"  required [(ngModel)]="data.password" #passwordCtrl="ngModel"   ></ion-input>
 </ion-item>
 
@@ -43,7 +43,7 @@
   </ion-row>
   
   <ion-row>
- <ion-select style="background-color: aliceblue;" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="Users">
+ <ion-select style="background-color: aliceblue;width:100%" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="Users">
         <ion-select-option value="1">user</ion-select-option>
         <ion-select-option value="2">owner</ion-select-option>
       </ion-select>
@@ -52,11 +52,12 @@
   <ion-text color="danger">usersCtrl is required</ion-text>
 </ion-item>
   </ion-row>
-<br>
+  <br>
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
       <ion-button (click)="login()" expand="full" style="--background:#550a57" [disabled]="!f.valid">LOGIN</ion-button>
-      <a routerLink="/create-account" style="color:white;font-size:1em;">Dont Have An Account? Create An Account.</a>
+      <br>
+      <a routerLink="/create-account" style="color:rgb(151, 10, 10);font-size:1em;">Dont Have An Account? Create An Account.</a>
     </ion-col>
   </ion-row>
 

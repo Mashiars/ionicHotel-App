@@ -1,28 +1,31 @@
 
-<ion-content style=" --background:#B44DA3"  >
+<ion-content style=" --background:#fff"  >
   
 
   <ion-grid >
     <ion-row>
-      <ion-col  size="12;">
-      <h1 style= "color:white;">MAIN HOTEL</h1>
+      <ion-col  size="12">
+      <h1 style= "color:#5F0661;">MAIN HOTEL</h1>
       </ion-col>
     </ion-row>
 
-      <ion-row>
-    <ion-card   *ngFor="let hotels of mainhotel">
-      <ion-card-header style=" background:#B44DA3">
+      <ion-row  *ngFor="let hotels of mainhotel" size="12">
+    <ion-card style="width:100%;" >
+      <ion-card-header style=" background:#e2cade">
           <ion-img [src]="hotels.imgUrl"></ion-img>
       </ion-card-header>
-      <ion-card-content style=" background:#B44DA3">
+      <ion-card-content style=" background:#e2cade">
             <ion-col style="color: #5F0661;">
              <div style="background-color:#e68de7 ;padding: 4%;">Hotel name:  {{hotels.hotelname}}</div> 
             </ion-col>
              <div style="background-color:#e68de7; padding: 4% ;color: #5F0661;">Price: {{hotels.price}}</div>
              <div style="background-color:#e68de7; padding: 4% ;color: #5F0661;">Room type: {{hotels.types}}</div>
+             
       </ion-card-content>
     </ion-card>
-    <ion-button style="width:100%;--background:#550a57"  [routerLink]="'/login'">BOOK NOW</ion-button>
+  </ion-row>
+<ion-row>
+    <ion-button style="width:100%;--background:#550a57"  [routerLink]="'/login'">READY TO BOOK</ion-button>
   </ion-row>
   </ion-grid>
 </ion-content>

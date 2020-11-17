@@ -9,11 +9,11 @@ import { MyserviceService } from '../myservice.service';
 export class BookingFormPage implements OnInit {
 
    data: any;
-  check_in:any;
-  check_out:any;
-  roomtype:any;
-  adults:any;
-  kids:any
+  // check_in:any;
+  // check_out:any;
+  // roomtype:any;
+  // adults:any;
+  // kids:any
   uid =this.route.snapshot.params.uid;
   collection:any;
   feedback:any;
@@ -36,7 +36,7 @@ export class BookingFormPage implements OnInit {
 
   addbookings(){
 
-    this.service. addbookings(this.service.getUserUID(),this.data.check_in,this.data.check_out,this.data.roomtype,this.data.adults,this.data.kids,this.data.uid)
+    this.service. addbookings(this.service.getUserUID(),this.data.check_in,this.data.check_out,this.data.roomtype,this.data.adults,this.data.kids,this.uid)
     this.feedback = "Successfully Booked!!!";
 
   }
