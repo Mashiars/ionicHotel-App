@@ -27,11 +27,11 @@
              <div style="background-color: #e68de7 ;padding: 4%;"> Hotel name {{hotels.hotelname}} </div> 
             </ion-col>
             <ion-col style="color:#5F0661 ;">
-             <div style="background-color:#e68de7 ; padding:4%">Price  {{hotels.price}}</div>
+             <div style="background-color:#e68de7 ; padding:4%">Price{{hotels.price}}</div>
             </ion-col>
           </ion-row>
           <ion-row style="color: #5F0661;">
-            <ion-col style="background-color:#e68de7 ; padding:4%"> Ratings 
+            <ion-col style="background-color:#e68de7 ; padding:4%"><ion-label>
            <div *ngIf="hotels.rating==1">
               <ion-icon style="color:rgb(12, 10, 0);font-size:1em" name="star-outline"></ion-icon>
             </div>
