@@ -3,39 +3,40 @@
   
   <ion-grid *ngFor="let x of list">
     
+    <ion-card style="border:#e68de7 ;">
       
-  <ion-row style="">
+  <ion-row >
     <ion-col  size="12">
     chec-in  {{x.check_in}}
     </ion-col>
   </ion-row>
-  <ion-row style="">
+  <ion-row >
     <ion-col  size="12">
     chec-out  {{x.check_out}}
     </ion-col>
   </ion-row>
 
-  <ion-row style="">
+  <ion-row >
     <ion-col  size="12">
       roomtype  {{x.roomtype}}
     </ion-col>
   </ion-row>
 
 
-  <ion-row style="">
+  <ion-row >
     <ion-col  size="12">
       adults  {{x.adults}}
     </ion-col>
   </ion-row>
 
-  <ion-row style="">
+  <ion-row >
     <ion-col  size="12">
       kids  {{x.kids}}
     </ion-col>
   </ion-row>
 
 
-  
+  </ion-card>
 
   </ion-grid>
 </ion-content>
