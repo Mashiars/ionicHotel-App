@@ -12,6 +12,32 @@
   font-size: 20px;
   line-height: 26px;
 }
+.h4{
+  
+  
+  
+   text-align: center;
+    margin-top: 250px;
+
+}
+ion-button {
+  position: relative;
+    width: 70%;
+    left: 15%;
+}
+
+.collective{
+  font-size: 60px;
+  color:#5F0661; 
+  text-align: center;
+  font-weight: bold;
+   font-weight: 900;
+  
+
+}
+img{
+  top: 20%;
+} 
 
 #container p {
   font-size: 16px;
@@ -21,7 +47,11 @@
 
   margin: 0;
 }
-
+ion-content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 #container a {
   text-decoration: none;
 }

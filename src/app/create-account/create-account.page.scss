@@ -1,0 +1,33 @@
+ion-content{
+    
+    display: flex;
+    width: 100%;
+    height:100% ;
+
+}
+// .card1{
+//     background-color: #e2cade   ;
+// position: relative;
+// border-radius: 25px ;
+// bottom: 60%;
+// }
+
+.login1{
+    // border: solid;
+    top: 30%;
+    position: relative;
+    width: 80%;
+    left: 10%;
+   
+}
+
+ion-input{
+    border-bottom: solid #5F0661 2px;
+    
+}
+
+ion-button {
+    position: relative;
+    width: 70%;
+    left: 15%;
+}

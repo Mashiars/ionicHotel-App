@@ -7,3 +7,48 @@
 input.ng-invalid.ng-touched{
     border: 1px solid red;
 }
+
+ion-content{
+    
+    display: flex;
+    width: 100%;
+    height:100% ;
+    
+}
+.login{
+    // border: solid;
+    top: 30%;
+    position: relative;
+    width: 80%;
+    left: 10%;
+   
+}
+.card{
+    background-color: #e2cade   ;
+position: relative;
+border-radius: 25px ;
+bottom: 60%;
+}
+// ion-input{
+//     color: black;
+// }
+
+ion-input{
+    border-bottom: solid #5F0661 2px;
+    
+}
+
+
+.select{
+    background-color: rgb(209, 112, 193);
+    position: relative;
+    width: 40%;
+    left:50% ;
+
+}
+
+ion-button {
+    position: relative;
+    width: 70%;
+    left: 15%;
+}

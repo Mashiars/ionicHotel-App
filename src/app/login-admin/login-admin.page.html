@@ -1,46 +1,79 @@
 
-<ion-content style=" --background:#B44DA3"  >
+<ion-content style=" --background: linear-gradient( #e68de7,#e2cade  );"  >
+
+
+  
+  <form #f="ngForm" novalidate >
   <ion-grid style="margin-top: 150px;">
 
+    <ion-row>
+      <ion-col style="color:#5F0661; text-align: center;font-weight: bold;font-family:'Arial Narrow Bold', sans-serif;font-size: 2em;" size="12">
+      Login
+      </ion-col>
+    </ion-row>
 
-
+ <ion-card class="card">
   
+<div class="login">
+  <ion-row style="margin-top: 40px;;">
+    <ion-col   size="12">
+      
+  <ion-label  style="color:#5F0661;" position="floating">Username</ion-label>
+  <ion-input  type="text" name="username" required [(ngModel)]="data.username" #usernameCtrl="ngModel"  ></ion-input>
 
+
+<ion-item *ngIf="!usernameCtrl.valid && usernameCtrl.touched">
+  <ion-text color="danger">username is required</ion-text>
+</ion-item>
+
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row style="margin-top: 40px;;">
+    <ion-col   size="12">
+     
+  <ion-label position="floating" style="color:#5F0661">Password </ion-label>
+  <ion-input type="password" name="Password"  required [(ngModel)]="data.password" #passwordCtrl="ngModel"   ></ion-input>
+
+
+<ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+  <ion-text color="danger">password is required</ion-text>
+</ion-item>
+
+    </ion-col>
+  </ion-row>
+</div>
+  <div class="select">
   <ion-row>
-    <ion-col style="color:#5F0661; text-align: center;font-weight: bold;font-family:'Arial Narrow Bold', sans-serif;font-size: 2em;" size="12">
-    Login
-    </ion-col>
-  </ion-row>
-
-  <ion-row style="margin-top: 40px;;">
-    <ion-col   size="12">
-      <ion-item>
-  <ion-label position="floating">Employee No</ion-label>
-  <ion-input></ion-input>
+ <ion-select style="color:black; background-color:white" [(ngModel)]="data.users" name="users" #usersCtrl="ngModel" placeholder="User/owner">
+        <ion-select-option value="1">user</ion-select-option>
+        <ion-select-option value="2">owner</ion-select-option>
+      </ion-select>
+    
+<ion-item *ngIf="!usersCtrl.valid && usersCtrl.touched">
+  <ion-text color="danger">usersC is required</ion-text>
 </ion-item>
-    </ion-col>
   </ion-row>
-
-
-  <ion-row style="margin-top: 40px;;">
-    <ion-col   size="12">
-      <ion-item>
-  <ion-label position="floating">Password </ion-label>
-  <ion-input></ion-input>
-</ion-item>
-    </ion-col>
-  </ion-row>
+</div>
+  <br>
 
   <ion-row style="margin-top: 40px;;">
     <ion-col   size="12">
-      <ion-button expand="full" style="--background:#550a57">LOGIN</ion-button>
+      <ion-button (click)="login()" expand="round" style="--background:#550a57" [disabled]="!f.valid">LOGIN</ion-button>
+      <br>
+
+      <a routerLink="/create-account" style="color:#5F0661;font-size:1em; position: relative;left: 10%;">
+        <br>Dont Have An Account? Create An Account.</a>
     </ion-col>
   </ion-row>
+  <br>
+  <br>
+
 
   
-
+</ion-card>
   </ion-grid>
+  </form>
 </ion-content>
-
-
 

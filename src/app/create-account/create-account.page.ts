@@ -15,10 +15,12 @@ export class CreateAccountPage implements OnInit {
   password: string;
 
 
+
   constructor(private router:Router) {
     this.data={
       email: '',
-      password:''
+      password:'',
+      
       
     }
    }
@@ -31,6 +33,7 @@ export class CreateAccountPage implements OnInit {
 signup(){
 console.log(this.data.email)
   console.log(this.data.password)
+  
   this.createUser(this.data.email,this.data.password)
 }
 
